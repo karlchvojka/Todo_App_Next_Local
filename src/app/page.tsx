@@ -1,8 +1,10 @@
 "use client"
+
 // Framework Imports
 import React, { MouseEvent, useState } from 'react'
 
 // Component Imports
+import AddTaskDialog from './components/modules/AddTaskDialog/AddTaskDialog'
 import Header from './components/modules/Header/Header'
 
 // Material UI Imports
@@ -23,7 +25,7 @@ const darkTheme = createTheme({
 
 export default function Home() {
   // State declarations
-  const [formDialogOpen, setFormDialogOpen] = useState(true)
+  const [formDialogOpen, setFormDialogOpen] = useState(false)
 
   // Module Declarations
   const handleClickOpen = (e: MouseEvent): void => {
@@ -37,6 +39,7 @@ export default function Home() {
   return (
     <ThemeProvider theme={darkTheme}>
       <Header handleClick={handleClickOpen} />
+      <AddTaskDialog open={formDialogOpen} handleClose={handleClose} />
       <Box className='appWrap' sx={{ m: 1 }}>
         <Grid container spacing={1}>
           <Grid xs={12}>

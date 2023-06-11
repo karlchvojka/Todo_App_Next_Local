@@ -1,4 +1,6 @@
 "use client"
+
+// Framework Imports
 import { FunctionComponent, MouseEventHandler } from 'react';
 
 // CSS Imports
