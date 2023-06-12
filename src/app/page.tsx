@@ -1,11 +1,11 @@
-"use client"
-
 // Framework Imports
+"use client"
 import React, { MouseEvent, useState } from 'react'
 
 // Component Imports
-import AddTaskDialog from './components/modules/AddTaskDialog/AddTaskDialog'
-import Header from './components/modules/Header/Header'
+import AddTaskDialog from '@/modules/AddTaskDialog/AddTaskDialog'
+import Header from '@/modules/Header/Header'
+import TodoList from '@/modules/TodoList/TodoList'
 
 // Material UI Imports
 import { ThemeProvider, createTheme } from '@mui/material/styles'
@@ -22,6 +22,37 @@ const darkTheme = createTheme({
     mode: 'dark',
   },
 });
+
+const testTodos = [
+  {
+    complete: false,
+    deadline: '2023-06-24',
+    id: 1,
+    title: 'First not complete',
+  },
+  {
+    complete: false,
+    deadline: '2023-06-25',
+    desc: 'This is a short description',
+    id: 3,
+    title: 'Second not complete',
+  },
+  {
+    complete: true,
+    completeDate: '2023-06-12',
+    deadline: '2023-06-27',
+    id: 4,
+    title: 'Second complete',
+  },
+  {
+    complete: true,
+    completeDate: '2023-06-11',
+    deadline: '2023-06-24',
+    desc: 'This is a short description',
+    id: 2,
+    title: 'First complete',
+  },
+]
 
 export default function Home() {
   // State declarations
@@ -94,9 +125,18 @@ export default function Home() {
             </Paper>
           </Grid>
           <Grid xs={12} sm={12} md={6}>
-            <Paper elevation={1} sx={{ p: 1 }}>
-              <h2>Current Todos:</h2>
-            </Paper>
+            <TodoList
+              listComplete={false}
+              title={'Current Todos'}
+              todos={testTodos}
+            />
+          </Grid>
+          <Grid xs={12} sm={12} md={6}>
+            <TodoList
+              listComplete={true}
+              title={'Completed Todos'}
+              todos={testTodos}
+            />
           </Grid>
         </Grid>
       </Box>

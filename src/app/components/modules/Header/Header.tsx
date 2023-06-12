@@ -1,7 +1,6 @@
-"use client"
-
 // Framework Imports
-import { FunctionComponent, MouseEventHandler } from 'react';
+"use client"
+import { MouseEventHandler } from 'react';
 
 // CSS Imports
 
@@ -18,7 +17,7 @@ interface HeaderProps {
    handleClick?: MouseEventHandler;
 }
 
-const Header: FunctionComponent<HeaderProps> = ({ handleClick }) => {
+const Header = ({ handleClick }: HeaderProps) => {
   return (
     <AppBar position="static">
       <Toolbar>
