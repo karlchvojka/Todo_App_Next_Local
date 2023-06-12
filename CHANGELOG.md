@@ -12,6 +12,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 - Added Add Task Form Dialog
+- Added path aliases:
+  - Modules
+  - Elements
+- Added Todo List Component
+- Added Todo Item Component
+
+### Changed
+- Edited Page component to include test data, and new components
 
 ### Removed
 - Test component
