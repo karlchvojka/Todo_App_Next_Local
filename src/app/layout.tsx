@@ -6,7 +6,7 @@ import './globals.css'
 import { Inter } from 'next/font/google'
 
 // Variable Declarations
-const inter = Inter({ subsets: ['latin'] })
+const inter = Inter({ subsets: ['latin'], preload: true })
 
 export const metadata = {
   title: `Karl Chvojka's Todo app`,

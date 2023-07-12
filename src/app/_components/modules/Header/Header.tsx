@@ -1,10 +1,10 @@
-// Framework Imports
+// NextJS Specific
 "use client"
+
+// Framework Imports
 import { MouseEventHandler } from 'react';
 
-// CSS Imports
-
-// MUI Imports
+// Material UI Specific Imports
 import {
   AppBar,
   Button,
@@ -12,7 +12,7 @@ import {
   Typography 
 } from '@mui/material'
 
-// Types
+// Types Declarations
 interface HeaderProps {
    handleClick?: MouseEventHandler;
 }
