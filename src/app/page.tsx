@@ -12,6 +12,17 @@ import TodoList from '@/modules/TodoList/TodoList'
 // Hook Imports
 import getLocalStorage from '@/hooks/getLocalStorage'
 
+// DayJS Imports
+import dayjs from 'dayjs'
+import timezone from 'dayjs/plugin/timezone'
+import utc from 'dayjs/plugin/utc'
+import updateLocale from 'dayjs/plugin/updateLocale'
+dayjs.extend(updateLocale)
+dayjs.updateLocale('en', { weekStart: 0 })
+dayjs.locale('en')
+dayjs.extend(utc)
+dayjs.extend(timezone)
+
 // Material UI Specific Imports
 import { createTheme, ThemeProvider } from '@mui/material/styles'
 import {

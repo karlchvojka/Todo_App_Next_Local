@@ -35,14 +35,30 @@ Suggested fix as per the discussion:
   - ~/src/app/page.tsx
     - Added docuementation to handleClickOpen and handleClickClose functions
     - Added documentation to Home function
+    - Added DayJS default setters.
+
   - ~/src/app/layout.tsx
     - Added documentation to the metadata function, and RootLayout function.
+
   - ~/src/app/_components/modules/Header/Header.tsx
     - Cleaned up some code standards.
+
   - ~/src/app/_lib/utils/dateFormat.tsx
     - Added proper documentation throughout.
+
   - ~/src/app/_lib/_hooks/getLocalStorage.tsx
     - Fixed small bug where app brakes when starting for the first time and or when the localStorage doesnt contain an todoList key.
+
+  - ~/src/app/_componets/elements/TodoItem/TodoItem.tsx
+    - Removed unneeded Dayjs stuff.
+
+  - ~/src/app/_components/modules/AddTaskDialog.tsx
+    - Removed unneeded Dayjs stuff
+    - Cleaned up code standards on line #5
+
+  - ~/src/app/_components/modules/EditTaskDialog.tsx
+    - Removed unneeded Dayjs stuff
+    - Cleaned up code standards on line #5
 
 ## [0.1.0]
 ## 2023-07-11 Cleanup Cont.

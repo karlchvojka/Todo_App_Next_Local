@@ -4,6 +4,9 @@
 // Framework Imports
 import React, { useState } from 'react'
 
+// Library Imports
+import dayjs from 'dayjs'
+
 // Component Imports
 import EditTaskDialog from '@/modules/EditTaskDialog/EditTaskDialog'
 
@@ -19,22 +22,13 @@ import {
   Typography 
 } from '@mui/material'
 
-// Method Imports
-import dayjs, { Dayjs } from 'dayjs'
-import timezone from 'dayjs/plugin/timezone'
-import utc from 'dayjs/plugin/utc'
-import updateLocale from 'dayjs/plugin/updateLocale'
-dayjs.extend(updateLocale)
-dayjs.updateLocale('en', { weekStart: 0 })
-dayjs.locale('en')
-dayjs.extend(utc)
-dayjs.extend(timezone)
-const timeZone = dayjs.tz.guess()
-dayjs.tz.setDefault(timeZone)
-
 // Hook Imports
 import getLocalStorage from '@/hooks/getLocalStorage'
 import pushLocalStorage from '@/hooks/pushLocalStorage'
+import { getCurrentDate } from '@/utils/dateFormat'
+
+// Variable Declarations
+const timeZone = getCurrentDate()
 
 // Types
 interface TodoItemProps {
