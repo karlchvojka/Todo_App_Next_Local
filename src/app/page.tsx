@@ -2,7 +2,7 @@
 "use client"
 
 // Framework Imports
-import React, { useEffect, useMemo, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 
 // Component Imports
 import AddTaskDialog from '@/modules/AddTaskDialog/AddTaskDialog'
@@ -23,6 +23,7 @@ import {
 import Grid from '@mui/material/Unstable_Grid2'
 
 // Material UI Specific Declarations:
+
 /**
  * Set theme to darkmode.
  */
@@ -32,6 +33,9 @@ const darkTheme = createTheme({
   },
 })
 
+/**
+ * The Home component
+ */
 export default function Home() {
   // State declarations
   const [formDialogOpen, setFormDialogOpen] = useState(false)
@@ -42,10 +46,17 @@ export default function Home() {
   }, [])
   
   // Module Declarations
+
+  /**
+   * Handles the click event for open button
+   */
   const handleClickOpen = () => {
     setFormDialogOpen(true)
   }
 
+  /**
+   * Handles the click event for open button
+   */
   const handleClose = () => {
     setFormDialogOpen(false)
   }
