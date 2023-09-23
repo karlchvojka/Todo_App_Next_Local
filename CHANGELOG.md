@@ -37,6 +37,8 @@ Suggested fix as per the discussion:
     - Added documentation to Home function
   - ~/src/app/layout.tsx
     - Added documentation to the metadata function, and RootLayout function.
+  - ~/src/app/_components/modules/Header/Header.tsx
+    - Cleaned up some code standards.
   - ~/src/app/_lib/utils/dateFormat.tsx
     - Added proper documentation throughout.
   - ~/src/app/_lib/_hooks/getLocalStorage.tsx

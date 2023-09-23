@@ -2,7 +2,7 @@
 "use client"
 
 // Framework Imports
-import { MouseEventHandler } from 'react';
+import { MouseEventHandler } from 'react'
 
 // Material UI Specific Imports
 import {
@@ -24,7 +24,7 @@ const Header = ({ handleClick }: HeaderProps) => {
         <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
           Todo App
         </Typography>
-        <Button variant="outlined" onClick={handleClick}> 
+        <Button variant="outlined" onClick={ handleClick }> 
           Add Todo
         </Button>
       </Toolbar>
