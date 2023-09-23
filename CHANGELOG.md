@@ -28,6 +28,13 @@ Suggested fix as per the discussion:
 - Added "preload" param to Inter variable declaration
 - Seemed to clear it up, will check on this in future.
 
+## [0.2.0] 
+## 2023-09-22 Base functionality
+
+### changed
+  - ~/src/app/_lib/_hooks/getLocalStorage.tsx
+    - Fixed small bug where app brakes when starting for the first time and or when the localStorage doesnt contain an todoList key.
+
 ## [0.1.0]
 ## 2023-07-11 Cleanup Cont.
 
