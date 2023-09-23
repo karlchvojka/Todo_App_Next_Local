@@ -1,3 +1,5 @@
+"use client"
+
 /**
  * Handles pushing data to local storage
  * @param key Name of localStorage field
