@@ -46,8 +46,18 @@ Suggested fix as per the discussion:
   - ~/src/app/_lib/utils/dateFormat.tsx
     - Added proper documentation throughout.
 
-  - ~/src/app/_lib/_hooks/getLocalStorage.tsx
+  - ~/src/app/_lib/_utils/getLocalStorage.tsx
     - Fixed small bug where app brakes when starting for the first time and or when the localStorage doesnt contain an todoList key.
+    - Moved this file:
+      From: ~/src/app/_lib/_hooks
+      To: ~/src/app/_lib/utils
+      Reason: This is a utility function, not a hook.
+  
+  - ~/src/app/_lib/utils/pushLocalStorage.tsx
+    - Moved this file:
+      From: ~/src/app/_lib/_hooks
+      To: ~/src/app/_lib/utils
+      Reason: This is a utility function, not a hook.
 
   - ~/src/app/_componets/elements/TodoItem/TodoItem.tsx
     - Removed unneeded Dayjs stuff.

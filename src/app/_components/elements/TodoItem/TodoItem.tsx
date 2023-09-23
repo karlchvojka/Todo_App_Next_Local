@@ -22,9 +22,9 @@ import {
   Typography 
 } from '@mui/material'
 
-// Hook Imports
-import getLocalStorage from '@/hooks/getLocalStorage'
-import pushLocalStorage from '@/hooks/pushLocalStorage'
+// Utility Imports
+import getLocalStorage from '@/utils/getLocalStorage'
+import pushLocalStorage from '@/utils/pushLocalStorage'
 import { getCurrentDate } from '@/utils/dateFormat'
 
 // Variable Declarations

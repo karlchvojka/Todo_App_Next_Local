@@ -18,9 +18,9 @@ import DialogTitle from '@mui/material/DialogTitle'
 import { DateTimeField } from '@mui/x-date-pickers'
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider'
 
-// Method Imports
-import getLocalStorage from '@/hooks/getLocalStorage'
-import pushLocalStorage from '@/hooks/pushLocalStorage'
+// Utility Imports
+import getLocalStorage from '@/utils/getLocalStorage'
+import pushLocalStorage from '@/utils/pushLocalStorage'
 import { getCurrentDate } from '@/utils/dateFormat'
 
 // DayJS Settings

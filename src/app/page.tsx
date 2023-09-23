@@ -9,8 +9,8 @@ import AddTaskDialog from '@/modules/AddTaskDialog/AddTaskDialog'
 import Header from '@/modules/Header/Header'
 import TodoList from '@/modules/TodoList/TodoList'
 
-// Hook Imports
-import getLocalStorage from '@/hooks/getLocalStorage'
+// Utility Imports
+import getLocalStorage from '@/utils/getLocalStorage'
 
 // DayJS Imports
 import dayjs from 'dayjs'
