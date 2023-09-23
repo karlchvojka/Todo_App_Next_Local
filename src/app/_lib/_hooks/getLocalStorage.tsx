@@ -7,10 +7,13 @@
  */
 const getLocalStorage = (key: string) => {
   if (typeof window !== "undefined") {
-    const parsed = JSON.parse(window.localStorage.getItem(key)!)
-    return parsed
+    if (window.localStorage.getItem(key) === null) {
+      return [{complete: true, completeDate: "2030-09-02", desc: "Test", deadline: "2040-09-20", id: "Test1", title: "Test1"}, {complete: false, completeDate: "2030-09-02", desc: "Test", deadline: "2040-09-20",id: "Test2", title: "Test2"}]
+    } else {
+      return JSON.parse(window.localStorage.getItem(key)!)
+    }
   } else {
-    return []
+    return [{complete: true, completeDate: "2030-09-02", desc: "Test", deadline: "2040-09-20", id: "Test1", title: "Test1"}, {complete: false, completeDate: "2030-09-02", desc: "Test", deadline: "2040-09-20",id: "Test2", title: "Test2"}]
   }
 }
 
