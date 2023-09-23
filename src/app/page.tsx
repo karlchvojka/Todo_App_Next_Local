@@ -1,80 +1,66 @@
-// Framework Imports
+// NextJS Specific
 "use client"
-import React, { MouseEvent, useState } from 'react'
+
+// Framework Imports
+import React, { useEffect, useMemo, useState } from 'react'
 
 // Component Imports
 import AddTaskDialog from '@/modules/AddTaskDialog/AddTaskDialog'
 import Header from '@/modules/Header/Header'
 import TodoList from '@/modules/TodoList/TodoList'
 
-// Material UI Imports
-import { ThemeProvider, createTheme } from '@mui/material/styles'
-import Grid from '@mui/material/Unstable_Grid2'
+// Hook Imports
+import getLocalStorage from '@/hooks/getLocalStorage'
+
+// Material UI Specific Imports
+import { createTheme, ThemeProvider } from '@mui/material/styles'
 import {
   Box,
   Link,
   Paper,
   Typography 
 } from '@mui/material'
+import Grid from '@mui/material/Unstable_Grid2'
 
+// Material UI Specific Declarations:
+/**
+ * Set theme to darkmode.
+ */
 const darkTheme = createTheme({
   palette: {
     mode: 'dark',
   },
-});
-
-const testTodos = [
-  {
-    complete: false,
-    deadline: '2023-06-24',
-    id: 1,
-    title: 'First not complete',
-  },
-  {
-    complete: false,
-    deadline: '2023-06-25',
-    desc: 'This is a short description',
-    id: 3,
-    title: 'Second not complete',
-  },
-  {
-    complete: true,
-    completeDate: '2023-06-12',
-    deadline: '2023-06-27',
-    id: 4,
-    title: 'Second complete',
-  },
-  {
-    complete: true,
-    completeDate: '2023-06-11',
-    deadline: '2023-06-24',
-    desc: 'This is a short description',
-    id: 2,
-    title: 'First complete',
-  },
-]
+})
 
 export default function Home() {
   // State declarations
   const [formDialogOpen, setFormDialogOpen] = useState(false)
-
+  const [todoList, setTodoList] = useState([])
+  
+  useEffect(() => {
+    setTodoList(getLocalStorage('todoList'))
+  }, [])
+  
   // Module Declarations
-  const handleClickOpen = (e: MouseEvent): void => {
-    setFormDialogOpen(true);
+  const handleClickOpen = () => {
+    setFormDialogOpen(true)
   }
 
   const handleClose = () => {
-    setFormDialogOpen(false);
+    setFormDialogOpen(false)
   }
 
   return (
-    <ThemeProvider theme={darkTheme}>
-      <Header handleClick={handleClickOpen} />
-      <AddTaskDialog open={formDialogOpen} handleClose={handleClose} />
+    <ThemeProvider theme={ darkTheme }>
+      <Header handleClick={ handleClickOpen } />
+      <AddTaskDialog 
+        handleClose={ handleClose }
+        open={ formDialogOpen } 
+      />
       <Box className='appWrap' sx={{ m: 1 }}>
-        <Grid container spacing={1}>
-          <Grid xs={12}>
-            <Paper elevation={1} sx={{ p: 1 }}>
+        <Grid container spacing={ 1 }>
+          <Grid xs={ 12 }>
+            <Paper elevation={ 1 } sx={{ p: 1 }}>
               <Typography
                 align='center'
                 gutterBottom
@@ -124,18 +110,18 @@ export default function Home() {
               </Typography>
             </Paper>
           </Grid>
-          <Grid xs={12} sm={12} md={6}>
+          <Grid xs={ 12 } sm={ 12 } md={ 6 }>
             <TodoList
-              listComplete={false}
-              title={'Current Todos'}
-              todos={testTodos}
+              listComplete={ false }
+              title={ 'Current Todos' }
+              todos={ todoList }
             />
           </Grid>
-          <Grid xs={12} sm={12} md={6}>
+          <Grid xs={ 12 } sm={ 12 } md={ 6 }>
             <TodoList
-              listComplete={true}
-              title={'Completed Todos'}
-              todos={testTodos}
+              listComplete={ true }
+              title={ 'Completed Todos' }
+              todos={ todoList }
             />
           </Grid>
         </Grid>
