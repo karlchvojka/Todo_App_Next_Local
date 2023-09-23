@@ -29,9 +29,16 @@ Suggested fix as per the discussion:
 - Seemed to clear it up, will check on this in future.
 
 ## [0.2.0] 
-## 2023-09-22 Base functionality
+## 2023-09-23 Base functionality
 
 ### changed
+  - ~/src/app/page.tsx
+    - Added docuementation to handleClickOpen and handleClickClose functions
+    - Added documentation to Home function
+  - ~/src/app/layout.tsx
+    - Added documentation to the metadata function, and RootLayout function.
+  - ~/src/app/_lib/utils/dateFormat.tsx
+    - Added proper documentation throughout.
   - ~/src/app/_lib/_hooks/getLocalStorage.tsx
     - Fixed small bug where app brakes when starting for the first time and or when the localStorage doesnt contain an todoList key.
 
