@@ -2,7 +2,10 @@
 "use client"
 
 // Framework Imports
-import { FunctionComponent, MouseEventHandler, useState } from 'react';
+import { FunctionComponent, useState } from 'react'
+
+// Library Imports
+import dayjs, { Dayjs } from 'dayjs'
 
 // Material UI Specific Imports
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs'
@@ -20,15 +23,11 @@ import getLocalStorage from '@/hooks/getLocalStorage'
 import pushLocalStorage from '@/hooks/pushLocalStorage'
 import { getCurrentDate } from '@/utils/dateFormat'
 
-import dayjs, { Dayjs } from 'dayjs'
-
 // DayJS Settings
 const timeZone = getCurrentDate()
-dayjs.tz.setDefault(timeZone)
 
 // Types Declarations
 import { AddTaskDialogProps } from '@/types/formTypes'
-
 
 const AddTaskDialog: FunctionComponent<AddTaskDialogProps> = ({ open, handleClose }) => {
   // State Declarations

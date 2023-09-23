@@ -1,5 +1,5 @@
 // Library Imports
-import dayjs, { Dayjs } from 'dayjs'
+import dayjs from 'dayjs'
 
 // Dayjs specific Imports
 import timezone from 'dayjs/plugin/timezone'
